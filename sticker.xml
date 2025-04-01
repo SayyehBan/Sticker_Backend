@@ -1,0 +1,298 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Sticker_Backend</name>
+    </assembly>
+    <members>
+        <member name="T:ConfigureTransient">
+            <summary>
+            کلاس پیکربندی سرویس‌های موقت
+            </summary>
+        </member>
+        <member name="M:ConfigureTransient.ConfigureTransients(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            پیکربندی سرویس‌های موقت در کانتینر DI
+            </summary>
+            <param name="services">کالکشن سرویس‌ها</param>
+        </member>
+        <member name="T:NotFoundException">
+            <summary>
+            استثنای سفارسی برای که اطلاعات یافت نشد
+            </summary>
+        </member>
+        <member name="M:NotFoundException.#ctor(System.String)">
+            <summary>
+            ایجاد نمونه جدید از استثنایی عدم یافتن
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="T:SwaggerExtention">
+            <summary>
+            کلاس افزودنی برای پیکربندی Swagger
+            </summary>
+        </member>
+        <member name="M:SwaggerExtention.AddOurSwagger(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            افزودن و پیکربندی Swagger به سرویس‌ها
+            </summary>
+            <param name="services">کالکشن سرویس‌ها</param>
+            <returns>کالکشن سرویس‌های به‌روز شده</returns>
+        </member>
+        <member name="T:StickerController">
+            <summary>
+            کنترلر برای مدیریت استیکر
+            </summary>
+        </member>
+        <member name="M:StickerController.#ctor(RSticker)">
+            <summary>
+            کنترلر برای مدیریت استیکر
+            </summary>
+            <param name="rSticker"></param>
+        </member>
+        <member name="M:StickerController.StickersDelete(System.Int32,System.String)">
+            <summary>
+            حذف  استیکر
+            </summary>
+            <param name="StickerID">شناسه استیکر</param>
+            <param name="OldPhoto">تصویر قدیمی برای حذف</param>
+            <returns></returns>
+        </member>
+        <member name="M:StickerController.StickersFindByID(System.Int32)">
+            <summary>
+            یافتن استیکر بر اساس شناسه
+            </summary>
+            <param name="StickerID">شناسه استیکر</param>
+            <returns></returns>
+        </member>
+        <member name="M:StickerController.StickersGetAll">
+            <summary>
+            لیست استیکر ها
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:StickerController.StickersInsert(VM_Stickers_Insert)">
+            <summary>
+            ثبت استیکر
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:StickerController.StickersUpdate(VM_Stickers_Update,System.String)">
+            <summary>
+            به‌روزرسانی استیکر
+            </summary>
+            <param name="model">مدل اطلاعات</param>
+            <param name="OldPhoto">تصویر قدیمی</param>
+            <returns></returns>
+        </member>
+        <member name="T:SqlServer">
+            <summary>
+            کلاس تنظیمات اتصال به پایگاه داده SQL Server
+            </summary>
+        </member>
+        <member name="M:SqlServer.ConnectionString">
+            <summary>
+            ایجاد رشته اتصال به پایگاه داده
+            </summary>
+            <returns>رشته اتصال به SQL Server</returns>
+        </member>
+        <member name="T:UploadFile">
+            <summary>
+            کلاس مدل برای آپلود فایل
+            </summary>
+        </member>
+        <member name="P:UploadFile.File">
+            <summary>
+            فایل آپلود شده
+            </summary>
+        </member>
+        <member name="T:VM_Stickers">
+            <summary>
+            کلاس مدل برای استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers.StickerID">
+            <summary>
+            شناسه استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers.Title">
+            <summary>
+            عنوان استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers.Price">
+            <summary>
+            قیمت استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers.Description">
+            <summary>
+            توضیحات استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers.Sticker">
+            <summary>
+            مسیر تصویر استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers.CreatedDate">
+            <summary>
+            تاریخ و زمان درج
+            </summary>
+        </member>
+        <member name="T:VM_Stickers_Insert">
+            <summary>
+            ذخیره سازی استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers_Insert.Title">
+            <summary>
+            عنوان استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers_Insert.Price">
+            <summary>
+            قیمت استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers_Insert.Description">
+            <summary>
+            توضیحات استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers_Insert.Sticker">
+            <summary>
+            مسیر تصویر استیکر
+            </summary>
+        </member>
+        <member name="T:VM_Stickers_Update">
+            <summary>
+            به‌روزرسانی استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers_Update.StickerID">
+            <summary>
+            شناسه استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers_Update.Title">
+            <summary>
+            عنوان استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers_Update.Price">
+            <summary>
+            قیمت استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers_Update.Description">
+            <summary>
+            توضیحات استیکر
+            </summary>
+        </member>
+        <member name="P:VM_Stickers_Update.Sticker">
+            <summary>
+            مسیر تصویر استیکر
+            </summary>
+        </member>
+        <member name="T:ISticker">
+            <summary>
+            سرویس استیکر
+            </summary>
+        </member>
+        <member name="M:ISticker.StickersDelete(System.Int32)">
+            <summary>
+            حذف استیکر
+            </summary>
+            <param name="StickerID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISticker.StickersFindByID(System.Int32)">
+            <summary>
+            
+            </summary>
+            <param name="StickerID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISticker.StickersGetAll">
+            <summary>
+            نمایش همه استیکر ها
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:ISticker.StickersInsert(VM_Stickers_Insert)">
+            <summary>
+            ذخیره استیکر
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:ISticker.StickersUpdate(VM_Stickers_Update)">
+            <summary>
+            ویرایش استیکر
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="T:RSticker">
+            <summary>
+            کلاس ریپازیتوری استیکر
+            </summary>
+        </member>
+        <member name="M:RSticker.StickersDelete(System.Int32)">
+            <summary>
+            سرویس استیکر
+            </summary>
+            <param name="StickerID"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:RSticker.StickersFindByID(System.Int32)">
+            <summary>
+            یافتن استیکر برحسب شناسه
+            </summary>
+            <param name="StickerID"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:RSticker.StickersGetAll">
+            <summary>
+            نمایش همه استیکر ها
+            </summary>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:RSticker.StickersInsert(VM_Stickers_Insert)">
+            <summary>
+            ذخیره استیکر
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="M:RSticker.StickersUpdate(VM_Stickers_Update)">
+            <summary>
+            ویرایش استیکر
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+            <exception cref="T:System.NotImplementedException"></exception>
+        </member>
+        <member name="T:AppConstants">
+            <summary>
+            ثابت‌های برنامه
+            </summary>
+        </member>
+        <member name="F:AppConstants.BaseRoot">
+            <summary>
+            مسیر پایه برای فایل‌های وب‌سایت
+            </summary>
+        </member>
+        <member name="F:AppConstants.DirectStickers">
+            <summary>
+            مسیر آپلود استیکر
+            </summary>
+        </member>
+    </members>
+</doc>
