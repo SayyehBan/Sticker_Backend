@@ -1,7 +1,9 @@
+
+
 /// <summary>
 /// کلاس مدل برای استیکر
 /// </summary>
-public class VM_Stickers
+public class VM_Stickers : VM_Pagination
 {
     /// <summary>
     /// شناسه استیکر

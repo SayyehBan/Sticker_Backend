@@ -19,7 +19,7 @@ public interface ISticker
     /// نمایش همه استیکر ها
     /// </summary>
     /// <returns></returns>
-    Task<IEnumerable<VM_Stickers>> StickersGetAll();
+    Task<IEnumerable<VM_Stickers>> StickersGetAll(Props_Pagination pagination);
     /// <summary>
     /// ذخیره استیکر
     /// </summary>

@@ -80,13 +80,14 @@ public class StickerController : ControllerBase
     /// <summary>
     /// لیست استیکر ها
     /// </summary>
+    /// <param name="pagination"></param>
     /// <returns></returns>
     [HttpGet]
-    public async Task<IActionResult> StickersGetAll()
+    public async Task<IActionResult> StickersGetAll([FromQuery] Props_Pagination pagination)
     {
         try
         {
-            var result = await rSticker.StickersGetAll();
+            var result = await rSticker.StickersGetAll(pagination);
             return new JsonResult(result);
         }
         catch (NotFoundException)

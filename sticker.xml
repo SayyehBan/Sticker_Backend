@@ -64,10 +64,11 @@
             <param name="StickerID">شناسه استیکر</param>
             <returns></returns>
         </member>
-        <member name="M:StickerController.StickersGetAll">
+        <member name="M:StickerController.StickersGetAll(Props_Pagination)">
             <summary>
             لیست استیکر ها
             </summary>
+            <param name="pagination"></param>
             <returns></returns>
         </member>
         <member name="M:StickerController.StickersInsert(VM_Stickers_Insert)">
@@ -104,6 +105,46 @@
         <member name="P:UploadFile.File">
             <summary>
             فایل آپلود شده
+            </summary>
+        </member>
+        <member name="T:VM_Pagination">
+            <summary>
+            کلاس مدل برای نمایش لیست با پیجینیشن
+            </summary>
+        </member>
+        <member name="P:VM_Pagination.TotalRecords">
+            <summary>
+            تعداد کل رکوردها
+            </summary>
+        </member>
+        <member name="P:VM_Pagination.TotalPages">
+            <summary>
+            تعداد کل صفحات
+            </summary>
+        </member>
+        <member name="P:VM_Pagination.CurrentPage">
+            <summary>
+            صفحه جاری
+            </summary>
+        </member>
+        <member name="P:VM_Pagination.PageSize">
+            <summary>
+            تعداد صفحه‌ها در هر صفحه نمایش داده شود
+            </summary>
+        </member>
+        <member name="T:Props_Pagination">
+            <summary>
+            پارامترهای صفحه بندی
+            </summary>
+        </member>
+        <member name="P:Props_Pagination.PageNumber">
+            <summary>
+            شماره صفحه
+            </summary>
+        </member>
+        <member name="P:Props_Pagination.PageSize">
+            <summary>
+            تعداد رکورد در هر صفحه نمایش داده شود
             </summary>
         </member>
         <member name="T:VM_Stickers">
@@ -215,7 +256,7 @@
             <param name="StickerID"></param>
             <returns></returns>
         </member>
-        <member name="M:ISticker.StickersGetAll">
+        <member name="M:ISticker.StickersGetAll(Props_Pagination)">
             <summary>
             نمایش همه استیکر ها
             </summary>
@@ -256,7 +297,7 @@
             <returns></returns>
             <exception cref="T:System.NotImplementedException"></exception>
         </member>
-        <member name="M:RSticker.StickersGetAll">
+        <member name="M:RSticker.StickersGetAll(Props_Pagination)">
             <summary>
             نمایش همه استیکر ها
             </summary>

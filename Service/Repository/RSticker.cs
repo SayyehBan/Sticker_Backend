@@ -46,12 +46,18 @@ public class RSticker : ISticker
     /// </summary>
     /// <returns></returns>
     /// <exception cref="NotImplementedException"></exception>
-    public async Task<IEnumerable<VM_Stickers>> StickersGetAll()
+    public async Task<IEnumerable<VM_Stickers>> StickersGetAll(Props_Pagination pagination)
     {
         using (var connection = new SqlConnection(SqlServer.ConnectionString()))
         {
             var sql = "dbo.StickersGetAll";
-            var result = await connection.QueryAsync<VM_Stickers>(sql, commandType: CommandType.StoredProcedure);
+            var parameters = new
+            {
+                PageNumber = pagination.PageNumber,
+                PageSize = pagination.PageSize
+
+            };
+            var result = await connection.QueryAsync<VM_Stickers>(sql, parameters, commandType: CommandType.StoredProcedure);
             return result.ToList();
         }
     }
